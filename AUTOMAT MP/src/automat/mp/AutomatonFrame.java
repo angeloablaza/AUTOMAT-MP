@@ -30,7 +30,7 @@ public class AutomatonFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Automaton");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Angelo Ablaza\\Desktop\\step1.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/images/Step1.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -40,9 +40,7 @@ public class AutomatonFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel1)
         );
 
         pack();
@@ -63,7 +61,7 @@ public class AutomatonFrame extends javax.swing.JFrame {
     }
 
     public void setLabel(String path) {
-        jLabel1.setIcon(new javax.swing.ImageIcon(path));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(path)));
     }
 
     /**

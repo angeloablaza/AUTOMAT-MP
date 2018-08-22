@@ -21,7 +21,7 @@ public class GameFrame extends javax.swing.JFrame {
     AutomatonFrame af;
     String scientist = "Earth";
     int steps = 1;
-
+    boolean cowBug = false;
     /**
      * Creates new form GameFrame
      */
@@ -43,6 +43,8 @@ public class GameFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
         jPanel1 = new javax.swing.JPanel();
         transportBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -63,6 +65,9 @@ public class GameFrame extends javax.swing.JFrame {
         howBtn = new javax.swing.JButton();
         solutionBtn = new javax.swing.JButton();
         scientistEarth = new javax.swing.JLabel();
+        restartBtn = new javax.swing.JButton();
+
+        jScrollPane3.setViewportView(jEditorPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AUTOMAT - New Game");
@@ -165,6 +170,16 @@ public class GameFrame extends javax.swing.JFrame {
 
         scientistEarth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/images/scientist (1).png"))); // NOI18N
 
+        restartBtn.setBackground(new java.awt.Color(0, 0, 51));
+        restartBtn.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        restartBtn.setForeground(new java.awt.Color(255, 255, 255));
+        restartBtn.setText("Restart");
+        restartBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restartBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -180,13 +195,15 @@ public class GameFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(47, 47, 47)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(restartBtn)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(scientistEarth))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 75, Short.MAX_VALUE)
+                                .addComponent(scientistEarth)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 84, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(scientistMars)
@@ -224,7 +241,8 @@ public class GameFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(howBtn)
                     .addComponent(locationLbl)
-                    .addComponent(solutionBtn))
+                    .addComponent(solutionBtn)
+                    .addComponent(restartBtn))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
@@ -287,8 +305,8 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.add("Cow");
                         mars.add("Lion");
                         steps++;
-                    } 
-                    af.setLabel(steps);
+                    }
+                    af.setLabel("/automat/images/Step2.png"); // NOI18N
                     break;
                 case 2:
                     scientist = "Earth";
@@ -298,14 +316,17 @@ public class GameFrame extends javax.swing.JFrame {
                         earth.add("Cow");
                         earth.add("Lion");
                         steps--;
+                        af.setLabel("/automat/images/Step2.png"); // NOI18N
                     } else if (lionCheckBox.isSelected()) {
                         mars.remove("Lion");
                         earth.add("Lion");
                         steps++;
+                        af.setLabel("/automat/images/Step3a.png"); // NOI18N
                     } else if (cowCheckBox.isSelected()) {
                         mars.remove("Cow");
                         earth.add("Cow");
                         steps++;
+                        af.setLabel("/automat/images/Step3b.png"); // NOI18N
                     }
                     break;
                 case 3:
@@ -316,18 +337,22 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.add("Human #1");
                         mars.add("Human #2");
                         steps++;
+                        af.setLabel("/automat/images/Step4a.png"); // NOI18N
+                        cowBug = true;
                     } else if (lionCheckBox.isSelected() && grainCheckBox.isSelected()) {
                         earth.remove("Lion");
                         earth.remove("Grain");
                         mars.add("Lion");
                         mars.add("Grain");
                         steps++;
+                        af.setLabel("/automat/images/Step4b.png"); // NOI18N
                     } else if (cowCheckBox.isSelected() && grainCheckBox.isSelected()) {
                         earth.remove("Cow");
                         earth.remove("Grain");
                         mars.add("Cow");
                         mars.add("Grain");
                         steps++;
+                        af.setLabel("/automat/images/Step4b.png"); // NOI18N
                     } else if (lionCheckBox.isSelected()) { //reverse
                         mars.add("Lion");
                         earth.remove("Lion");
@@ -340,6 +365,12 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.remove("Cow");
                         earth.add("Cow");
                         steps++;
+                        if (cowBug) {
+                            af.setLabel("/automat/images/Step5a.png"); // NOI18N
+                        } else {
+                            af.setLabel("/automat/images/Step5b.png"); // NOI18N
+
+                        }
                     } else if (human_oneCheckBox.isSelected() && human_twoCheckBox.isSelected()) {
                         earth.add("Human #1");
                         earth.add("Human #2");
@@ -352,6 +383,7 @@ public class GameFrame extends javax.swing.JFrame {
                         earth.add("Grain");
                         earth.add("Lion");
                         steps++;
+                        af.setLabel("/automat/images/Step5b.png"); // NOI18N
                     }
                     break;
                 case 5:
@@ -362,24 +394,26 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.add("Lion");
                         mars.add("Grain");
                         steps++;
+                        af.setLabel("/automat/images/Step6a.png"); // NOI18N
                     } else if (human_oneCheckBox.isSelected() && human_twoCheckBox.isSelected()) {
                         earth.remove("Human #1");
                         earth.remove("Human #2");
                         mars.add("Human #1");
                         mars.add("Human #2");
                         steps++;
-                    } else if(cowCheckBox.isSelected() && grainCheckBox.isSelected()) {
+                        af.setLabel("/automat/images/Step6a.png"); // NOI18N
+                    } else if (cowCheckBox.isSelected() && grainCheckBox.isSelected()) {
                         earth.remove("Cow");
                         earth.remove("Grain");
                         mars.add("Cow");
                         mars.add("Grain");
                         steps++;
-                    }
-                    else if (cowCheckBox.isSelected()) {
+                        af.setLabel("/automat/images/Step6b.png"); // NOI18N
+                    } else if (cowCheckBox.isSelected()) {
                         mars.add("Cow");
                         earth.remove("Cow");
                         steps--;
-                    } 
+                    }
                     break;
                 case 6:
                     scientist = "Earth";
@@ -389,15 +423,16 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.remove("Lion");
                         mars.remove("Grain");
                         steps--;
-                    } 
-                    else if (lionCheckBox.isSelected()) {
+                    } else if (lionCheckBox.isSelected()) {
                         mars.remove("Lion");
                         earth.add("Lion");
                         steps++;
-                    } else if (cowCheckBox.isSelected()){
+                        af.setLabel("/automat/images/Step7.png"); // NOI18N
+                    } else if (cowCheckBox.isSelected()) {
                         mars.remove("Cow");
                         earth.add("Cow");
                         steps++;
+                        af.setLabel("/automat/images/Step2.png"); // NOI18N
                     }
                     break;
                 case 7:
@@ -408,14 +443,16 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.add("Lion");
                         mars.add("Cow");
                         steps++;
+                        af.setLabel("/automat/images/Step8.png"); // NOI18N
                     } else if (lionCheckBox.isSelected()) {
                         mars.add("Lion");
                         earth.remove("Lion");
                         steps--;
-                    } else {
-                        JOptionPane.showMessageDialog(rootPane, "Game Over!");
-                        restart();
                     }
+//                    else {
+//                        JOptionPane.showMessageDialog(rootPane, "Game Over!");
+//                        restart();
+//                    }
                     break;
                 default:
                     break;
@@ -447,14 +484,21 @@ public class GameFrame extends javax.swing.JFrame {
 
     private void solutionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solutionBtnActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(rootPane, " 1. Bring the Cow and Lion to Mars"
-                + "\n 2. Bring the Lion to Earth"
-                + "\n 3. Bring both Humans to Mars"
-                + "\n 4. Bring the Cow to Earth"
-                + "\n 5. Bring the Lion and the Grain to Mars"
-                + "\n 6. Bring the Lion to Earth"
-                + "\n 7. Bring the Lion and the Cow to Mars", "Solution", PLAIN_MESSAGE);
+        SolutionFrame sf = new SolutionFrame();
+        sf.setVisible(true);
+//        JOptionPane.showMessageDialog(rootPane, " 1. Bring the Cow and Lion to Mars"
+//                + "\n 2. Bring the Lion to Earth"
+//                + "\n 3. Bring both Humans to Mars"
+//                + "\n 4. Bring the Cow to Earth"
+//                + "\n 5. Bring the Lion and the Grain to Mars"
+//                + "\n 6. Bring the Lion to Earth"
+//                + "\n 7. Bring the Lion and the Cow to Mars", "Solution", PLAIN_MESSAGE);
     }//GEN-LAST:event_solutionBtnActionPerformed
+
+    private void restartBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartBtnActionPerformed
+        // TODO add your handling code here:
+        restart();
+    }//GEN-LAST:event_restartBtnActionPerformed
 
     public void intialize() {
         earth.add("Human #1");
@@ -462,6 +506,7 @@ public class GameFrame extends javax.swing.JFrame {
         earth.add("Cow");
         earth.add("Lion");
         earth.add("Grain");
+        af.setLabel("/automat/images/Step1.png");
     }
 
     public void refreshView() {
@@ -527,7 +572,7 @@ public class GameFrame extends javax.swing.JFrame {
         } else if (mars.toString().contains("Cow") && mars.toString().contains("Grain") && !scientist.equals("Mars")) {
             JOptionPane.showMessageDialog(rootPane, "Cow ate the Grains", "Game Over", ERROR_MESSAGE);
         }
-        System.out.println("Step: " + steps);
+        //System.out.println("Step: " + steps);
     }
 
     public void restart() {
@@ -673,6 +718,7 @@ public class GameFrame extends javax.swing.JFrame {
     private javax.swing.JButton howBtn;
     private javax.swing.JCheckBox human_oneCheckBox;
     private javax.swing.JCheckBox human_twoCheckBox;
+    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -680,9 +726,11 @@ public class GameFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JCheckBox lionCheckBox;
     private javax.swing.JLabel locationLbl;
     private javax.swing.JTextArea marsTextArea;
+    private javax.swing.JButton restartBtn;
     private javax.swing.JLabel scientistEarth;
     private javax.swing.JLabel scientistMars;
     private javax.swing.JButton solutionBtn;
