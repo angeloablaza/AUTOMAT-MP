@@ -83,7 +83,7 @@ public class SolutionFrame extends javax.swing.JFrame {
         jTextArea1.setText("Solution 1\n1. Transport Cow and Lion\n2. Transport Lion\n3. Transport Human 1 and Human 2\n4. Transport Cow\n5. Transport Lion and Grain\n6. Transport Lion\n7. Transport Lion and Cow");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/images/Solution1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/new/Solution1.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,7 +92,7 @@ public class SolutionFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -107,7 +107,7 @@ public class SolutionFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,7 +126,7 @@ public class SolutionFrame extends javax.swing.JFrame {
 
     private void solutionFourBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solutionFourBtnActionPerformed
         // TODO add your handling code here:
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/images/Solution4.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/new/Solution4.png"))); // NOI18N
         jTextArea1.setText("Solution 4\n" 
                 + "1. Transport Cow and Lion\n"
                 + "2. Transport Lion\n"
@@ -139,7 +139,7 @@ public class SolutionFrame extends javax.swing.JFrame {
 
     private void solutionOneBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solutionOneBtnActionPerformed
         // TODO add your handling code here:
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/images/Solution1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/new/Solution1.png"))); // NOI18N
         jTextArea1.setText("Solution 1\n"
                 + "1. Transport Cow and Lion\n"
                 + "2. Transport Lion\n"
@@ -152,7 +152,7 @@ public class SolutionFrame extends javax.swing.JFrame {
 
     private void solutionTwoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solutionTwoBtnActionPerformed
         // TODO add your handling code here:
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/images/Solution2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/new/Solution2.png"))); // NOI18N
         jTextArea1.setText("Solution 2\n"
                 + "1. Transport Cow and Lion\n"
                 + "2. Transport Cow\n"
@@ -165,7 +165,7 @@ public class SolutionFrame extends javax.swing.JFrame {
 
     private void solutionThreeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solutionThreeBtnActionPerformed
         // TODO add your handling code here:
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/images/Solution3.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/new/Solution3.png"))); // NOI18N
         jTextArea1.setText("Solution 3\n"
                 + "1. Transport Cow and Lion\n"
                 + "2. Transport Lion\n"
