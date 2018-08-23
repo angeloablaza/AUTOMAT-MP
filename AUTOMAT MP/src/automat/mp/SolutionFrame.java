@@ -43,6 +43,8 @@ public class SolutionFrame extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
+        solutionOneBtn.setBackground(new java.awt.Color(0, 0, 51));
+        solutionOneBtn.setForeground(new java.awt.Color(255, 255, 255));
         solutionOneBtn.setText("Solution 1");
         solutionOneBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,6 +53,8 @@ public class SolutionFrame extends javax.swing.JFrame {
         });
         jPanel2.add(solutionOneBtn, new java.awt.GridBagConstraints());
 
+        solutionTwoBtn.setBackground(new java.awt.Color(0, 0, 51));
+        solutionTwoBtn.setForeground(new java.awt.Color(255, 255, 255));
         solutionTwoBtn.setText("Solution 2");
         solutionTwoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,6 +63,8 @@ public class SolutionFrame extends javax.swing.JFrame {
         });
         jPanel2.add(solutionTwoBtn, new java.awt.GridBagConstraints());
 
+        solutionThreeBtn.setBackground(new java.awt.Color(0, 0, 51));
+        solutionThreeBtn.setForeground(new java.awt.Color(255, 255, 255));
         solutionThreeBtn.setText("Solution 3");
         solutionThreeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +73,8 @@ public class SolutionFrame extends javax.swing.JFrame {
         });
         jPanel2.add(solutionThreeBtn, new java.awt.GridBagConstraints());
 
+        solutionFourBtn.setBackground(new java.awt.Color(0, 0, 51));
+        solutionFourBtn.setForeground(new java.awt.Color(255, 255, 255));
         solutionFourBtn.setText("Solution 4");
         solutionFourBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,16 +91,16 @@ public class SolutionFrame extends javax.swing.JFrame {
         jTextArea1.setText("Solution 1\n1. Transport Cow and Lion\n2. Transport Lion\n3. Transport Human 1 and Human 2\n4. Transport Cow\n5. Transport Lion and Grain\n6. Transport Lion\n7. Transport Lion and Cow");
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/new/Solution1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/final/Solution1.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(22, 22, 22)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -114,11 +122,11 @@ public class SolutionFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -126,7 +134,7 @@ public class SolutionFrame extends javax.swing.JFrame {
 
     private void solutionFourBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solutionFourBtnActionPerformed
         // TODO add your handling code here:
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/new/Solution4.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/final/Solution4.png"))); // NOI18N
         jTextArea1.setText("Solution 4\n" 
                 + "1. Transport Cow and Lion\n"
                 + "2. Transport Lion\n"
@@ -139,7 +147,7 @@ public class SolutionFrame extends javax.swing.JFrame {
 
     private void solutionOneBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solutionOneBtnActionPerformed
         // TODO add your handling code here:
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/new/Solution1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/final/Solution1.png"))); // NOI18N
         jTextArea1.setText("Solution 1\n"
                 + "1. Transport Cow and Lion\n"
                 + "2. Transport Lion\n"
@@ -152,7 +160,7 @@ public class SolutionFrame extends javax.swing.JFrame {
 
     private void solutionTwoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solutionTwoBtnActionPerformed
         // TODO add your handling code here:
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/new/Solution2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/final/Solution2.png"))); // NOI18N
         jTextArea1.setText("Solution 2\n"
                 + "1. Transport Cow and Lion\n"
                 + "2. Transport Cow\n"
@@ -165,7 +173,7 @@ public class SolutionFrame extends javax.swing.JFrame {
 
     private void solutionThreeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solutionThreeBtnActionPerformed
         // TODO add your handling code here:
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/new/Solution3.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/automat/final/Solution3.png"))); // NOI18N
         jTextArea1.setText("Solution 3\n"
                 + "1. Transport Cow and Lion\n"
                 + "2. Transport Lion\n"
