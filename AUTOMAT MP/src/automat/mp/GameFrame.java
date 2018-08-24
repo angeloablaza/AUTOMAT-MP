@@ -306,6 +306,8 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.add("Cow");
                         mars.add("Lion");
                         steps++;
+                    } else {
+                        ////solutionTwo();
                     }
                     af.setLabel("/automat/final/Step2.png"); // NOI18N
                     break;
@@ -328,6 +330,8 @@ public class GameFrame extends javax.swing.JFrame {
                         earth.add("Cow");
                         steps++;
                         af.setLabel("/automat/final/Step3b.png"); // NOI18N
+                    } else {
+                        //solutionTwo();
                     }
                     break;
                 case 3:
@@ -354,14 +358,14 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.add("Grain");
                         steps++;
                         af.setLabel("/automat/final/Step4b.png"); // NOI18N
-                    } else if (cowCheckBox.isSelected()) {
+                    } else if (cowCheckBox.isSelected()) { //human cow
                         earth.remove("Cow");
                         mars.add("Cow");
                         if (human_oneCheckBox.isSelected()) {
                             earth.remove("Human #1");
                             mars.add("Human #1");
                             af.setLabel("/automat/final/Step4c.png"); // NOI18N
-                        } else if (human_twoCheckBox.isSelected()){
+                        } else if (human_twoCheckBox.isSelected()) {
                             earth.remove("Human #2");
                             mars.add("Human #2");
                             af.setLabel("/automat/final/Step4c.png"); // fix later
@@ -373,32 +377,24 @@ public class GameFrame extends javax.swing.JFrame {
                         if (human_oneCheckBox.isSelected()) {
                             earth.remove("Human #1");
                             mars.add("Human #1");
-                            af.setLabel("/automat/final/Step4d.png"); // NOI18N
-                        } else if (human_twoCheckBox.isSelected()){
+                            af.setLabel("/automat/final/Step4c.png"); // NOI18N
+                        } else if (human_twoCheckBox.isSelected()) {
                             earth.remove("Human #2");
                             mars.add("Human #2");
-                            af.setLabel("/automat/final/Step4d.png"); // fix later
+                            af.setLabel("/automat/final/Step4c.png"); // fix later
                         }
                         steps++;
-                    } 
-                    else if (lionCheckBox.isSelected()) { //reverse
+                    } else if (lionCheckBox.isSelected()) { //reverse
                         mars.add("Lion");
                         earth.remove("Lion");
                         steps--;
+                    } else {
+                        //solutionTwo();
                     }
                     break;
                 case 4:
                     scientist = "Earth";
-                    if (cowCheckBox.isSelected()) {
-                        mars.remove("Cow");
-                        earth.add("Cow");
-                        steps++;
-                        if (cowBug) {
-                            af.setLabel("/automat/final/Step5a.png"); // NOI18N
-                        } else {
-                            af.setLabel("/automat/final/Step5b.png"); // NOI18N
-                        }
-                    } else if (human_oneCheckBox.isSelected() && human_twoCheckBox.isSelected()) {
+                    if (human_oneCheckBox.isSelected() && human_twoCheckBox.isSelected()) {
                         earth.add("Human #1");
                         earth.add("Human #2");
                         mars.remove("Human #1");
@@ -417,8 +413,21 @@ public class GameFrame extends javax.swing.JFrame {
                         earth.add("Cow");
                         earth.add("Lion");
                         steps++;
-                        af.setLabel("/automat/final/Step5c.png"); // NOI18N
-                    } 
+                        af.setLabel("/automat/final/Step5dead.png"); // NOI18N
+                        cowBug = true;
+                    } else if (cowCheckBox.isSelected()) {
+                        mars.remove("Cow");
+                        earth.add("Cow");
+                        steps++;
+                        if (cowBug) {
+                            af.setLabel("/automat/final/Step5a.png"); // NOI18N
+                        } else {
+                            af.setLabel("/automat/final/Step5b.png"); // NOI18N
+                        }
+                        cowBug = false;
+                    } else {
+                        //solutionTwo();
+                    }
                     break;
                 case 5:
                     scientist = "Mars";
@@ -443,10 +452,35 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.add("Grain");
                         steps++;
                         af.setLabel("/automat/final/Step6b.png"); // NOI18N
+                    } else if (lionCheckBox.isSelected() && cowCheckBox.isSelected()) {
+                        earth.remove("Cow");
+                        earth.remove("Lion");
+                        mars.add("Cow");
+                        mars.add("Lion");
+                        steps++;
+                        af.setLabel("/automat/final/Step4b.png"); // NOI18N
+                    } else if (cowCheckBox.isSelected()) {
+                        if (human_oneCheckBox.isSelected()) {
+                            earth.remove("Cow");
+                            earth.remove("Human #1");
+                            mars.add("Cow");
+                            mars.add("Human #1");
+                            steps++;
+                            af.setLabel("/automat/final/Step6b.png"); // NOI18N
+                        } else if (human_twoCheckBox.isSelected()) {
+                            earth.remove("Cow");
+                            earth.remove("Human #2");
+                            mars.add("Cow");
+                            mars.add("Human #2");
+                            steps++;
+                            af.setLabel("/automat/final/Step6b.png"); // NOI18N
+                        }
                     } else if (cowCheckBox.isSelected()) {
                         mars.add("Cow");
                         earth.remove("Cow");
                         steps--;
+                    } else {
+                        //solutionTwo();
                     }
                     break;
                 case 6:
@@ -457,16 +491,33 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.remove("Lion");
                         mars.remove("Grain");
                         steps--;
+                    } else if (lionCheckBox.isSelected() && cowCheckBox.isSelected()) {
+                        mars.remove("Lion");
+                        mars.remove("Cow");
+                        earth.add("Lion");
+                        earth.add("Cow");
+                        steps++;
+                        af.setLabel("/automat/final/Step7a.png"); // NOI18N
                     } else if (lionCheckBox.isSelected()) {
                         mars.remove("Lion");
                         earth.add("Lion");
                         steps++;
                         af.setLabel("/automat/final/Step7.png"); // NOI18N
                     } else if (cowCheckBox.isSelected()) {
-                        mars.remove("Cow");
-                        earth.add("Cow");
-                        steps++;
-                        af.setLabel("/automat/final/Step7.png"); // NOI18N
+                        if (!cowBug) {
+                            mars.remove("Cow");
+                            earth.add("Cow");
+                            steps++;
+                            af.setLabel("/automat/final/Step7.png"); // NOI18N
+                        } else {
+                            mars.remove("Cow");
+                            earth.add("Cow");
+                            steps++;
+                            af.setLabel("/automat/final/Step5b.png"); // NO
+                        }
+
+                    } else {
+                        //solutionTwo();
                     }
                     break;
                 case 7:
@@ -478,17 +529,77 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.add("Cow");
                         steps++;
                         af.setLabel("/automat/final/Step8.png"); // NOI18N
+                    } else if (lionCheckBox.isSelected() && grainCheckBox.isSelected()) {
+                        earth.remove("Lion");
+                        earth.remove("Grain");
+                        mars.add("Lion");
+                        mars.add("Grain");
+                        steps++;
+//                        af.setLabel("/automat/final/Step8.png"); // NOI18N
+                    } else if (cowCheckBox.isSelected()) {
+                        if (human_oneCheckBox.isSelected()) {
+                            earth.remove("Cow");
+                            earth.remove("Human #1");
+                            mars.add("Cow");
+                            mars.add("Human #1");
+                            steps++;
+                            af.setLabel("/automat/final/Step8a.png");
+                        } else if (human_twoCheckBox.isSelected()) {
+                            earth.remove("Cow");
+                            earth.remove("Human #2");
+                            mars.add("Cow");
+                            mars.add("Human #2");
+                            steps++;
+                            af.setLabel("/automat/final/Step8a.png");
+                        }
                     } else if (lionCheckBox.isSelected()) {
                         mars.add("Lion");
                         earth.remove("Lion");
                         steps--;
+                    } else {
+                        //solutionTwo();
                     }
-//                    else {
-//                        JOptionPane.showMessageDialog(rootPane, "Game Over!");
-//                        restart();
-//                    }
                     break;
+
+                //extra steps NOT OPTIMAL
+                case 8:
+                    scientist = "Earth";
+                    if (lionCheckBox.isSelected() && cowCheckBox.isSelected()) {
+                        mars.remove("Lion");
+                        mars.remove("Cow");
+                        earth.add("Lion");
+                        earth.add("Cow");
+                        steps++;
+                        af.setLabel("/automat/final/Step7.png"); // NOI18N
+                    } else if (lionCheckBox.isSelected()) {
+                        mars.remove("Lion");
+                        earth.add("Lion");
+                        steps++;
+                        af.setLabel("/automat/final/Step7.png"); // NOI18N
+                    } else if (cowCheckBox.isSelected()) {
+                        mars.remove("Cow");
+                        earth.add("Cow");
+                        steps++;
+                        af.setLabel("/automat/final/Step7.png"); // NOI18N
+                    } else {
+                        //solutionTwo();
+                    }
+                    break;
+                case 9:
+                    scientist = "Mars";
+                    if (lionCheckBox.isSelected() && cowCheckBox.isSelected()) {
+                        earth.remove("Lion");
+                        earth.remove("Cow");
+                        mars.add("Lion");
+                        mars.add("Cow");
+                        steps++;
+                        af.setLabel("/automat/final/Step8.png"); // NOI18N
+                    } 
+                    else {
+                        //solutionTwo();
+                    }
                 default:
+//                    //solutionTwo(); //handle error
                     break;
             }
         } else {
@@ -498,7 +609,7 @@ public class GameFrame extends javax.swing.JFrame {
 //SOLUTION 2.0
 //        if (getAllCheckboxes()) {
 //            steps++;
-//            solutionTwo();
+//            //solutionTwo();
 //        } else {
 //            JOptionPane.showMessageDialog(rootPane, "You can only transport 2 at a time", "Error", ERROR_MESSAGE);
 //        }
@@ -578,8 +689,8 @@ public class GameFrame extends javax.swing.JFrame {
             scientistMars.setVisible(true);
         }
 
-//        af.setLabel(steps);
-        if (mars.size() == 5 && scientist.equals("Mars")) {
+        System.out.println(steps);
+        if (earth.size() == 0 && scientist.equals("Mars")) {
             JOptionPane.showMessageDialog(rootPane, "Congrats! You colonized Mars", "Winner Winner Chicken Dinner!", INFORMATION_MESSAGE);
         }
     }
@@ -653,6 +764,11 @@ public class GameFrame extends javax.swing.JFrame {
     }
 
     public void solutionTwo() {
+        if (scientist.equals("Earth")) {
+            scientist = "Mars";
+        } else {
+            scientist = "Earth";
+        }
         if (human_oneCheckBox.isSelected()) {
             if (scientist.equals("Earth")) {
                 earth.remove("Human #1");
