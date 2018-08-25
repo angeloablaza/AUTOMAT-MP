@@ -117,7 +117,7 @@ public class GameFrame extends javax.swing.JFrame {
         human_twoCheckBox.setBackground(new java.awt.Color(0, 0, 51));
         human_twoCheckBox.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         human_twoCheckBox.setForeground(new java.awt.Color(255, 255, 255));
-        human_twoCheckBox.setText("Human # 2");
+        human_twoCheckBox.setText("Human #2");
 
         human_oneCheckBox.setBackground(new java.awt.Color(0, 0, 51));
         human_oneCheckBox.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -231,7 +231,7 @@ public class GameFrame extends javax.swing.JFrame {
                                 .addComponent(cowCheckBox))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(human_oneCheckBox)
-                                .addGap(22, 22, 22)
+                                .addGap(18, 18, 18)
                                 .addComponent(lionCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
         );
@@ -415,6 +415,22 @@ public class GameFrame extends javax.swing.JFrame {
                         steps++;
                         af.setLabel("/automat/final/Step5dead.png"); // NOI18N
                         cowBug = true;
+                    } else if (lionCheckBox.isSelected()) {
+                        if (human_oneCheckBox.isSelected()) {
+                            mars.remove("Human #1");
+                            mars.remove("Lion");
+                            earth.add("Human #1");
+                            earth.add("Lion");
+                            steps++;
+                            af.setLabel("/automat/final/Step3a.png"); // NOI18N
+                        } else if(human_twoCheckBox.isSelected()){
+                            mars.remove("Human #2");
+                            mars.remove("Lion");
+                            earth.add("Human #2");
+                            earth.add("Lion");
+                            steps++;
+                            af.setLabel("/automat/final/Step3a.png"); // NOI18N
+                        }
                     } else if (cowCheckBox.isSelected()) {
                         mars.remove("Cow");
                         earth.add("Cow");
@@ -535,7 +551,7 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.add("Lion");
                         mars.add("Grain");
                         steps++;
-//                        af.setLabel("/automat/final/Step8.png"); // NOI18N
+                        af.setLabel("/automat/final/Step8a.png"); // NOI18N
                     } else if (cowCheckBox.isSelected()) {
                         if (human_oneCheckBox.isSelected()) {
                             earth.remove("Cow");
@@ -552,7 +568,15 @@ public class GameFrame extends javax.swing.JFrame {
                             steps++;
                             af.setLabel("/automat/final/Step8a.png");
                         }
-                    } else if (lionCheckBox.isSelected()) {
+                    } else if(human_oneCheckBox.isSelected() && human_twoCheckBox.isSelected()){
+                        earth.remove("Human #1");
+                        earth.remove("Human #2");
+                        mars.add("Human #1");
+                        mars.add("Human #2");
+                        steps++;
+                        af.setLabel("/automat/final/Step6a.png");
+                    } 
+                    else if (lionCheckBox.isSelected()) {
                         mars.add("Lion");
                         earth.remove("Lion");
                         steps--;
@@ -594,8 +618,7 @@ public class GameFrame extends javax.swing.JFrame {
                         mars.add("Cow");
                         steps++;
                         af.setLabel("/automat/final/Step8.png"); // NOI18N
-                    } 
-                    else {
+                    } else {
                         //solutionTwo();
                     }
                 default:

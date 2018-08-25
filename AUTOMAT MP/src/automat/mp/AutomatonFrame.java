@@ -47,7 +47,6 @@ public class AutomatonFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void setLabel(int step) {
-
         switch (step) {
             case 1:
                 jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Angelo Ablaza\\Desktop\\step1.jpg"));
